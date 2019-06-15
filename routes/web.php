@@ -10,7 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('home');
-});
+    return Redirect::to('home');
+})->name('base_url');
+
+Route::get('/home', function () {
+    return view('user.index');
+})->name('user.index');
+
+Route::get('/admin/home', function () {
+    return view('admin.index');
+})->name('admin.index');
