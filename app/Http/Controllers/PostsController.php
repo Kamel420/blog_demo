@@ -16,8 +16,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('admin.index', compact('posts'));  
+        $post = Post::all();
+        $categories = Category::all();
+        return view('admin.index', compact('post','categories'));  
     }
 
     /**
@@ -27,8 +28,9 @@ class PostsController extends Controller
      */
     public function create()
     {   
-        $categories = Category::pluck('title', 'id')->toArray();
-        return view('admin.create' , compact('categories'));
+        $categories = Category::all();
+        $categories_list = Category::pluck('title', 'id')->toArray();
+        return view('admin.create' , compact('categories','categories_list'));
     }
 
     /**
@@ -63,8 +65,15 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {   
+        $categories = Category::all();
+        $post = Post::find($id);
+        $category_name = Category::find($post->category_id);
+        if (!$post) {
+            return Redirect::back();
+        }
+
+        return view('admin.show', compact('post','category_name','categories'));
     }
 
     /**
@@ -76,8 +85,9 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::findOrFail($id);
-        $categories = Category::pluck('title', 'id')->toArray();
-        return view('admin.edit', compact('post','categories'));
+        $categories_list = Category::pluck('title', 'id')->toArray();
+        $categories = Category::all();
+        return view('admin.edit', compact('post','categories','categories_list'));
     }
 
     /**
@@ -122,5 +132,21 @@ class PostsController extends Controller
             return Redirect::to(route('admin.index'))->with('message-success', __('Post Deleted Successfully'));
         }
         return Redirect::to(route('admin.index'))->with('message-danger', __('Post can\'t be deleted'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function category($category_id)
+    {   
+        if($category_id)
+        {
+            $post = Post::where('category_id',$category_id)->get();
+            $categories = Category::all();
+            return view('admin.index', compact('post','categories'));
+        }
     }
 }

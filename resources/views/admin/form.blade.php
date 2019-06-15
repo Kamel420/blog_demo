@@ -15,7 +15,7 @@
     <div class="form-group {{ $errors->has('type') ? 'has-error' : ''}}">
         {!! Form::label('category_id', __('Category').('*'), ['class' => 'col-md-4 control-label']) !!}
         <div class="col-md-6">
-            {!! Form::select('category_id', [NULL=>__('Select Category')]+$categories,((isset($post) && $post)? $post['category_id'] : null), ['class' => 'form-control', 'required'=>'required']) !!}
+            {!! Form::select('category_id', [NULL=>__('Select Category')]+$categories_list,((isset($post) && $post)? $post['category_id'] : null), ['class' => 'form-control', 'required'=>'required']) !!}
         </div>
     </div>
     <div class="pull-right"> 

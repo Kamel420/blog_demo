@@ -20,5 +20,9 @@ function delete_post()
         document.getElementById('delete-form').submit();
     }
 }
+
+function goBack() {
+  window.history.back();
+}
                         
 </script>

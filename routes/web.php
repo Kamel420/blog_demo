@@ -28,5 +28,9 @@ Route::patch('admin/update/{id}', ['as'=>'admin.update','uses'=>'PostsController
 Route::delete('admin/{id}', ['as'=>'admin.destroy','uses'=>'PostsController@destroy']);
 Route::get('admin/create', ['as'=>'admin.create','uses'=>'PostsController@create']);
 Route::post('admin/store', ['as' => 'admin.store','uses' => 'PostsController@store']);
+Route::get('admin/show/{id}', ['as' => 'admin.show','uses' => 'PostsController@show']);
+
+Route::get('admin/category/{category_id}', ['as' => 'admin.category','uses' => 'PostsController@category']);
+
 
 
