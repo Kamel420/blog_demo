@@ -5,7 +5,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 </p>
 
-## WHIPIX Task
+## Mumm Task
 
 This demo-application is a task introduced to MUMM inc, 
 
@@ -19,8 +19,8 @@ this demo aims to enable the user to surf and perform many actions over the Post
 
 This Demo built in laravel V 5.5 so make sure your environment  matches version requirements .
 
-- Using CMD and Composer clone the repo by typing : git clone https://github.com/Kamel420/blog_demo.git
-- Run Composer Install to handle depandces by typing : composer install
-- Run Migrations for building DB tables , make sure you changed your DB credintials in the .env file first, you can achieve that by typing php artisan migrate
-- Run Seeding for dummy DB data for testing purpose , you can achieve that by typing , you can achieve that by typing php artisan db:seed
-- now you good to go  
+- Using CMD and Composer clone the repo by typing : (git clone https://github.com/Kamel420/blog_demo.git0
+- Run Composer Install to handle depandces by typing : (composer install)
+- Run Migrations for building DB tables , make sure you changed your DB credintials in the .env file first, you can achieve that by typing (php artisan migrate)
+- Run Seeding for dummy DB data for testing purpose , you can achieve that by typing , you can achieve that by typing (php artisan db:seed)
+- now you good to go  .
