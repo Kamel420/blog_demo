@@ -33,7 +33,7 @@
               <tr>
                 <td  class="counterCell">)</td>
                 <td><a href="{{route('admin.show',$post->id)}}" style=" text-decoration: none; ">{{ $post->title }}</a></td>
-                <td>{{ $post->description }}</td>
+                <td>{{ str_limit( $post->description , $limit = 100, $end = '...') }}</td>
                 <td>{{ $post->created_at->format('d M Y')  }}</td>
                 <td>{{ $post->category->title }}</td>
                 <td>

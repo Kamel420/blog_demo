@@ -11,12 +11,16 @@
 |
 */
 Route::get('/', function () {
-    return Redirect::to('home');
+    return Redirect::to('/user/index');
 })->name('base_url');
 
-Route::get('/home', function () {
-    return view('user.index');
-})->name('user.index');
+// Route::get('/home', function () {
+//     return view('user.index');
+// })->name('user.index');
+
+Route::get('user/index', ['as'=>'user.index','uses'=>'UserController@index']);
+Route::get('user/category/{category_id}', ['as' => 'user.category','uses' => 'UserController@category']);
+Route::get('user/show/{id}', ['as' => 'user.show','uses' => 'UserController@show']);
 
 // Route::get('/admin/home', function () {
 //     return view('admin.index');

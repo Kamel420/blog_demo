@@ -68,12 +68,11 @@ class PostsController extends Controller
     {   
         $categories = Category::all();
         $post = Post::find($id);
-        $category_name = Category::find($post->category_id);
         if (!$post) {
             return Redirect::back();
         }
 
-        return view('admin.show', compact('post','category_name','categories'));
+        return view('admin.show', compact('post','categories'));
     }
 
     /**
@@ -135,7 +134,7 @@ class PostsController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     *
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

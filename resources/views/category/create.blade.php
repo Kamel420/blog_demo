@@ -14,7 +14,7 @@
 
       <div class="container-fluid">
         <div class="container">
-          <h2>Create New Post</h2>
+          <h2>Create New Category</h2>
 
             {!! Form::open(['url' => route('category.store'), 'method'=>'post' , 'class' => 'form-horizontal']) !!}
 

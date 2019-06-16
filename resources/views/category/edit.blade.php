@@ -14,7 +14,7 @@
 
       <div class="container-fluid">
         <div class="container">
-          <h2>Edit Post</h2>
+          <h2>Edit Category</h2>
           
              {!! Form::model($category, [
                 'method' => 'PATCH',

@@ -4,7 +4,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <ul class="list-inline text-center">
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://github.com/Kamel420/blog_demo">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-github fa-stack-1x fa-inverse"></i>
@@ -22,3 +22,8 @@
   <script src="{{ asset('/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}" ></script>
   <!-- Custom scripts for this template -->
   <script src="{{ asset('/assets/js/clean-blog.min.js') }}" ></script>
+  <script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
