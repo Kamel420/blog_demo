@@ -14,7 +14,7 @@
 
       <div class="container-fluid">
         <div class="container">
-          <h2>Edit Posts</h2>
+          <h2>Edit Categories</h2>
           <!-- <p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p>                                                                                       -->
           <div class="table-responsive">          
           <table class="table table-dark">
@@ -22,28 +22,23 @@
               <tr>
                 <th>#</th>
                 <th>Title</th>
-                <th>Description</th>
                 <th>Date</th>
-                <th>Category</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-            @foreach($post AS $post)
+            @foreach($categories AS $categories)
               <tr>
                 <td  class="counterCell">)</td>
-                <td><a href="{{route('admin.show',$post->id)}}" style=" text-decoration: none; ">{{ $post->title }}</a></td>
-                <td>{{ $post->description }}</td>
-                <td>{{ $post->created_at->format('d M Y')  }}</td>
-                <td>{{ $post->category->title }}</td>
-                <td>
-                <a href="{{ route('admin.edit',$post->id) }}"><i class="icon-edit"></i></a> 
+                <td>{{ $categories->title }}</td>
+                <td>{{ $categories->created_at->format('d M Y')  }}</td>
+                <td><a href="{{ route('category.edit',$categories->id) }}"><i class="icon-edit"></i></a> 
                 | 
                 <a  href="#" onclick="delete_post()" style="color:red;"><i class="icon-trash"></i></a></td>
-              </tr>
-              @endforeach
+            </tr>
+            @endforeach
 
-              @include('admin.delete_form')
+            @include('category.delete_form')
 
             </tbody>
           </table>

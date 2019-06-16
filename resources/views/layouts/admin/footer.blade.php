@@ -14,7 +14,7 @@ $("#menu-toggle").click(function(e) {
 <script>
 function delete_post()
 {
-    var result = confirm('Are you sure you wish to delete this post?');
+    var result = confirm('Are you sure you wish to delete this ?');
     if( result ){
         event.preventDefault();
         document.getElementById('delete-form').submit();

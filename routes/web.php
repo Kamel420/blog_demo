@@ -32,5 +32,11 @@ Route::get('admin/show/{id}', ['as' => 'admin.show','uses' => 'PostsController@s
 
 Route::get('admin/category/{category_id}', ['as' => 'admin.category','uses' => 'PostsController@category']);
 
+Route::get('category/index', ['as'=>'category.index','uses'=>'CategoriesController@index']);
+Route::get('category/edit/{id}', ['as'=>'category.edit','uses'=>'CategoriesController@edit']);
+Route::patch('category/update/{id}', ['as'=>'category.update','uses'=>'CategoriesController@update']);
+Route::delete('category/{id}', ['as'=>'category.destroy','uses'=>'CategoriesController@destroy']);
+Route::get('category/create', ['as'=>'category.create','uses'=>'CategoriesController@create']);
+Route::post('category/store', ['as' => 'category.store','uses' => 'CategoriesController@store']);
 
 
